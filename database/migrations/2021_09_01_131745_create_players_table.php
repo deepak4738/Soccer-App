@@ -19,7 +19,7 @@ class CreatePlayersTable extends Migration
             $table->string('last_name');
             $table->string('player_image_url')->nullable();
             $table->unsignedInteger('team_id')->nullable();
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
     }
