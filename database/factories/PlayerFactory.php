@@ -1,0 +1,34 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Player;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class PlayerFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Player::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $team_ids = \DB::table('teams')->select('id')->get()->toArray();
+        $team_id = (!empty($team_ids) ? $this->faker->randomElement($team_ids)->id : null);
+
+        return [
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'player_image_url' => $this->faker->imageUrl(100, 100),
+            'team_id' => $team_id
+        ];
+    }
+}
