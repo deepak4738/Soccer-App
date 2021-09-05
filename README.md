@@ -14,7 +14,7 @@ These are the server requirements needed to setup the application on different m
 Follow below steps to be able to run the application
 
 1. git clone https://github.com/deepak4738/Soccer-App.git
-2. cd soccer-app && cp .env.example .env and update with needfuls. Also add this KEY at the bottom SOCCER_TOKEN having some unique key value
+2. cd soccer-app && cp .env.example .env and update with needfuls. Also add unique key value to SOCCER_TOKEN key at bottom of .env.
 3. composer install && composer update
 4. php artisan key:generate
 5. php artisan migrate
