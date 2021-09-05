@@ -113,6 +113,28 @@ class PlayerController extends BaseController
     }
 
     /**
+     * PURPOSE : Player details 
+     * METHOD: GET
+     * REQ PARAMS : none 
+     * URL : /api/player-details/{id}
+    */
+    public function playerDetail($player_id)
+    {
+        if (empty($this->playerRepository->findById($player_id))){
+            return $this->sendError('No Player Found', 404);
+        }
+
+        $data = [];
+        $data = $this->playerRepository->findById($player_id)->toArray();
+        
+        return  $this->sendResponse(
+                    $data, 
+                    'Player Detail', 
+                    201
+                );
+    }
+
+    /**
      * PURPOSE : Update Player
      * METHOD: POST
      * REQ PARAMS: player_id, first_name, last_name, player_image_url, team_id

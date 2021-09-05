@@ -7,6 +7,9 @@
             <div class="card">
                 <div class="card-header">All Teams</div>
                 <div>
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger" role="alert">{{ Session::get('error') }}</div>
+                    @endif
                     <div class="alert alert-danger error"></div>
                     <a href="{{ route('add_team') }}" class="btn btn-primary new_button">Create New Team</a>
                 </div>

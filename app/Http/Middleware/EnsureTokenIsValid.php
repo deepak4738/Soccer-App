@@ -17,7 +17,7 @@ class EnsureTokenIsValid
     public function handle(Request $request, Closure $next)
     {
         $appKey = $request->header('S-TOKEN');
-
+        
         if(strcmp($appKey, env('SOCCER_TOKEN','SoccerToken')) != 0) {
             $response = [
                 'status'  => false,
@@ -25,7 +25,7 @@ class EnsureTokenIsValid
                 'message' => "Invalid Api Key",
             ];
 
-            return response()->json($response, 401);exit();
+            return response()->json($response, 201);exit();
         }
 
         return $next($request);

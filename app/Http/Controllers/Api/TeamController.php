@@ -43,9 +43,13 @@ class TeamController extends BaseController
      * REQ PARAMS: None
      * URL : /api/team-details/{id}
     */
-    public function teamDetail($id)
+    public function teamDetail($team_id)
     {
-        $team = $this->teamRepository->findById($id)->toArray();
+        if (empty($this->teamRepository->findById($team_id))){
+            return $this->sendError('No Team Found', 404);
+        }
+
+        $team = $this->teamRepository->findById($team_id)->toArray();
         
         return  $this->sendResponse(
                     $team, 

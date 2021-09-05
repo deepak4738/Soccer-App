@@ -52,6 +52,9 @@ class AdminController extends Controller
         $team = [];
         $response = $this->getData('/api/team-details/'.$id, 'GET', [], true);
 
+        if(!$response['status']){
+            return redirect()->route('admin_teams')->with('error', $response['message']);
+        }
         if(!empty($response['data'])) {
             $team = $response['data'];
         }
@@ -102,8 +105,12 @@ class AdminController extends Controller
     public function editPlayer($id, Request $request){
         $player = [];
         $teams = [];
-        $response = $this->getData('/api/player/'.$id, 'GET', [], true);
+        $response = $this->getData('/api/player-details/'.$id, 'GET', [], true);
 
+        if(!$response['status']){
+            return redirect()->route('admin_players')->with('error', $response['message']);
+        }
+        
         if(!empty($response['data'])) {
             $player = $response['data'];
         }
