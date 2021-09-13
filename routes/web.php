@@ -23,12 +23,12 @@ Route::get('/player/{id}/team', 'FrontendController@getPlayer')->name('getPlayer
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:web']], function () {
     Route::get('/', 'AdminController@show');
-    Route::get('teams', 'AdminController@teams')->name('admin_teams');
-    Route::get('team/add', 'AdminController@addTeam')->name('add_team');
-    Route::get('/team/{id}/edit', 'AdminController@editTeam')->name('edit_team');
+    Route::get('teams', 'AdminController@teams')->name('adminTeams');
+    Route::get('team/add', 'AdminController@addTeam')->name('addTeam');
+    Route::get('/team/{id}/edit', 'AdminController@editTeam')->name('editTeam');
 
-    Route::get('players', 'AdminController@players')->name('admin_players');
-    Route::get('player/add', 'AdminController@addPlayer')->name('add_player');
-    Route::get('player/edit/{id}', 'AdminController@editPlayer')->name('edit_player');
+    Route::get('players', 'AdminController@players')->name('adminPlayers');
+    Route::get('player/add', 'AdminController@addPlayer')->name('addPlayer');
+    Route::get('player/edit/{id}', 'AdminController@editPlayer')->name('editPlayer');
 });
 

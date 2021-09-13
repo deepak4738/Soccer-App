@@ -19,7 +19,8 @@ Follow below steps to be able to run the application
 4. php artisan key:generate
 5. php artisan migrate
 6. php artisan db:seed
-7. serve the application
+7. php artisan scribe:generate 
+8. serve the application
 
 ## To Run the application on localhost
 #### Application will serve on the available PORT like `http://localhost:8000`
@@ -31,6 +32,11 @@ Default admin-login credentials is:
 ```
 email - admin@devon.com
 password - admin@2021
+```
+
+Follow this link for API Documentation:
+```
+localhost:port/docs/
 ```
 
 ## Screenshots:

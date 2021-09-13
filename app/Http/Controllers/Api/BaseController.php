@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 class BaseController extends Controller
 {
 
-    /* success response method.
-     *
+    /** 
+     * success response method.
+     * 
+     * @param array $result
+     * @param string message
+     * @param integer $statusCode
      * @return \Illuminate\Http\Response
      */
     public function sendResponse($result, $message, $statusCode = 200)
@@ -27,6 +31,8 @@ class BaseController extends Controller
     /**
      * return error response.
      *
+     * @param string message
+     * @param integer $statusCode
      * @return \Illuminate\Http\Response
      */
     public function sendError($message, $statusCode = 200)

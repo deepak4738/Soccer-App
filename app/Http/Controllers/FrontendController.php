@@ -10,6 +10,7 @@ class FrontendController extends Controller
     /**
      * Display a listing of the teams.
      *
+     * @param None
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -26,6 +27,7 @@ class FrontendController extends Controller
 
     /**
      * Fetch and display listing of team players
+     * 
      * @param integer $id
      * @return \Illuminate\Http\Response
     */
@@ -45,7 +47,7 @@ class FrontendController extends Controller
 
     /**
      * Fetch player details
-     * @param string $name
+     * 
      * @param integer $id
      * @return \Illuminate\Http\Response
     */

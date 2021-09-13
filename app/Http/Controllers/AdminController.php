@@ -9,16 +9,18 @@ class AdminController extends Controller
     /**
      * Redirect admin root routing to admin teams listing
      *
+     * @param None
      * @return route redirection
      */
     public function show()
     {
-        return redirect()->route('admin_teams');
+        return redirect()->route('adminTeams');
     }
 
     /**
      * Display team listing with CRUD functionality
      *
+     * @param None
      * @return \Illuminate\Http\Response
      */
     public function teams()
@@ -36,6 +38,7 @@ class AdminController extends Controller
     /**
      * Add team form
      *
+     * @param None
      * @return \Illuminate\Http\Response
      */
     public function addTeam(){
@@ -46,6 +49,8 @@ class AdminController extends Controller
     /**
      * Edit team form with content
      *
+     * @param integer $id
+     * @param object $request
      * @return \Illuminate\Http\Response
      */
     public function editTeam($id, Request $request){
@@ -53,7 +58,7 @@ class AdminController extends Controller
         $response = $this->getData('/api/team-details/'.$id, 'GET', [], true);
 
         if(!$response['status']){
-            return redirect()->route('admin_teams')->with('error', $response['message']);
+            return redirect()->route('adminTeams')->with('error', $response['message']);
         }
         if(!empty($response['data'])) {
             $team = $response['data'];
@@ -66,6 +71,7 @@ class AdminController extends Controller
     /**
      * Display player listing with CRUD functionality
      *
+     * @param None
      * @return \Illuminate\Http\Response
      */
     public function players()
@@ -83,6 +89,7 @@ class AdminController extends Controller
     /**
      * Add player form
      *
+     * @param None
      * @return \Illuminate\Http\Response
      */
     public function addPlayer(){
@@ -100,6 +107,8 @@ class AdminController extends Controller
     /**
      * Edit player form with content
      *
+     * @param integer $id
+     * @param object $request
      * @return \Illuminate\Http\Response
      */
     public function editPlayer($id, Request $request){
@@ -108,7 +117,7 @@ class AdminController extends Controller
         $response = $this->getData('/api/player-details/'.$id, 'GET', [], true);
 
         if(!$response['status']){
-            return redirect()->route('admin_players')->with('error', $response['message']);
+            return redirect()->route('adminPlayers')->with('error', $response['message']);
         }
         
         if(!empty($response['data'])) {

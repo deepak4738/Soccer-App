@@ -11,7 +11,7 @@
                         <div class="alert alert-danger" role="alert">{{ Session::get('error') }}</div>
                     @endif
                     <div class="alert alert-danger error"></div>
-                    <a href="{{ route('add_team') }}" class="btn btn-primary new_button">Create New Team</a>
+                    <a href="{{ route('addTeam') }}" class="btn btn-primary new_button">Create New Team</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-inverse">
@@ -30,7 +30,7 @@
                                     <td>{{ $item['name'] }}</td>
                                     <td><img src="{{ $item['logo_url'] }}" alt="Card image cap"></td>
                                     <td>
-                                        <a href="{{ route('edit_team', ['id' => $item['id']]) }}" class="btn btn-secondary">Edit</a> 
+                                        <a href="{{ route('editTeam', ['id' => $item['id']]) }}" class="btn btn-secondary">Edit</a> 
                                         |
                                         <a href="javascript:void(0);" data-team_id="{{ $item['id'] }}" class="btn btn-danger delete_team">Delete</a>
                                     </td>

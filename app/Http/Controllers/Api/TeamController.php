@@ -40,16 +40,17 @@ class TeamController extends BaseController
     /**
      * PURPOSE : Get team details
      * METHOD: GET
+     * HEADERS: S-TOKEN
      * REQ PARAMS: None
      * URL : /api/team-details/{id}
     */
-    public function teamDetail($team_id)
+    public function teamDetail($teamId)
     {
-        if (empty($this->teamRepository->findById($team_id))){
+        if (empty($this->teamRepository->findById($teamId))){
             return $this->sendError('No Team Found', 404);
         }
 
-        $team = $this->teamRepository->findById($team_id)->toArray();
+        $team = $this->teamRepository->findById($teamId)->toArray();
         
         return  $this->sendResponse(
                     $team, 
@@ -62,6 +63,7 @@ class TeamController extends BaseController
     /**
      * PURPOSE : Add Team
      * METHOD: POST
+     * HEADERS: S-TOKEN
      * REQ PARAMS: team_name, team_logo
      * URL : /api/add/team
     */
@@ -90,6 +92,7 @@ class TeamController extends BaseController
     /**
      * PURPOSE : Update
      * METHOD: POST
+     * HEADERS: S-TOKEN
      * REQ PARAMS: id, team_name, team_logo
      * URL : /api/edit/team
     */
@@ -119,6 +122,7 @@ class TeamController extends BaseController
     /**
      * PURPOSE : Delete tean
      * METHOD: POST
+     * HEADERS: S-TOKEN
      * REQ PARAMS: team_id
      * URL : /api/delete/team
     */

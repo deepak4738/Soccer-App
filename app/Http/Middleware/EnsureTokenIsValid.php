@@ -26,8 +26,8 @@ class EnsureTokenIsValid
             ];
 
             return response()->json($response, 201);exit();
+        } else {
+            return $next($request);
         }
-
-        return $next($request);
     }
 }

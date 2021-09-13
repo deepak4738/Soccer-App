@@ -14,6 +14,15 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+    * Generic action to perform actions based on endpoints and metthods passed in parammeters
+    *
+    * @param string $endPoint
+    * @param string $method
+    * @param array $params
+    * @param string $header
+    * @return \Illuminate\Http\Response
+    */
     public function getData($endPoint, $method, $params = null, $header = null)
     {   
         $request = Request::create($endPoint, $method, $params);

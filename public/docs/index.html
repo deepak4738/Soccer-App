@@ -1,0 +1,1972 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Soccer App Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.10.2.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+        var baseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.10.2.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: September 13 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-teams">PURPOSE : Get All teams
+METHOD: GET
+REQ PARAMS: None
+URL : /api/teams</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-teams">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/teams" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/teams"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-teams">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Marina Botsford&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/0099bb?text=ab&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:10&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:10&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Beryl Langosh&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/002244?text=vel&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Bernard Bashirians&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/00eebb?text=culpa&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Miss Imelda Mosciski II&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/008844?text=vitae&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;Mr. Daryl Adams&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/009999?text=iusto&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Paula Larson I&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/00bb00?text=fuga&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Alia Mraz&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/005500?text=quos&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Jordyn Bahringer&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/0022cc?text=vero&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:12&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:12&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;Mr. Max Kris&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ddee?text=excepturi&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:12&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:12&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;name&quot;: &quot;Marlene Bruen&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/007755?text=et&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:12&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:12&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;name&quot;: &quot;Deepak teams&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/007755?text=de&quot;,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;name&quot;: &quot;Aftab Team&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/007755?text=al&quot;,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        }
+    ],
+    &quot;message&quot;: &quot;Teams List Found&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-teams" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-teams"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-teams"></code></pre>
+</span>
+<span id="execution-error-GETapi-teams" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-teams"></code></pre>
+</span>
+<form id="form-GETapi-teams" data-method="GET"
+      data-path="api/teams"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-teams', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-teams"
+                    onclick="tryItOut('GETapi-teams');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-teams"
+                    onclick="cancelTryOut('GETapi-teams');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-teams" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/teams</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-team--id-">PURPOSE: Get All player by teamId
+METHOD: GET
+REQ PARAMS: NONE
+URL: /api/team/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-team--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/team/14" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/team/14"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-team--id-">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;data&quot;: null,
+    &quot;message&quot;: &quot;No Team Found&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-team--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-team--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-team--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-team--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-team--id-"></code></pre>
+</span>
+<form id="form-GETapi-team--id-" data-method="GET"
+      data-path="api/team/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-team--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-team--id-"
+                    onclick="tryItOut('GETapi-team--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-team--id-"
+                    onclick="cancelTryOut('GETapi-team--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-team--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/team/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-team--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the team.</p>            </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-players">PURPOSE : Get All players
+METHOD: GET
+REQ PARAMS: None
+URL : /api/players</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-players">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/players" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/players"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-players">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 12,
+            &quot;first_name&quot;: &quot;Rudy&quot;,
+            &quot;last_name&quot;: &quot;Grahams&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/008800?text=omnis&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;first_name&quot;: &quot;Theodora&quot;,
+            &quot;last_name&quot;: &quot;Kunze&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/004488?text=eius&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 20,
+            &quot;first_name&quot;: &quot;Merle&quot;,
+            &quot;last_name&quot;: &quot;Labadie&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/009977?text=debitis&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 23,
+            &quot;first_name&quot;: &quot;Eliza&quot;,
+            &quot;last_name&quot;: &quot;Wunsch&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0055ff?text=repellat&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 34,
+            &quot;first_name&quot;: &quot;Antonietta&quot;,
+            &quot;last_name&quot;: &quot;Luettgen&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0088dd?text=accusantium&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 41,
+            &quot;first_name&quot;: &quot;Lindsey&quot;,
+            &quot;last_name&quot;: &quot;Torp&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0077cc?text=reprehenderit&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 43,
+            &quot;first_name&quot;: &quot;Ora&quot;,
+            &quot;last_name&quot;: &quot;Farrell&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00aabb?text=cum&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 45,
+            &quot;first_name&quot;: &quot;Waldo&quot;,
+            &quot;last_name&quot;: &quot;Mann&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/002211?text=et&quot;,
+            &quot;team_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;first_name&quot;: &quot;Trey&quot;,
+            &quot;last_name&quot;: &quot;O'Reilly&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0066ff?text=voluptatem&quot;,
+            &quot;team_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;first_name&quot;: &quot;Barton&quot;,
+            &quot;last_name&quot;: &quot;Medhurst&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ff55?text=natus&quot;,
+            &quot;team_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;first_name&quot;: &quot;Edmond&quot;,
+            &quot;last_name&quot;: &quot;Mayer&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/000033?text=dolor&quot;,
+            &quot;team_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 50,
+            &quot;first_name&quot;: &quot;Triston&quot;,
+            &quot;last_name&quot;: &quot;Zemlak&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/006644?text=fuga&quot;,
+            &quot;team_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:25&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:25&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;first_name&quot;: &quot;Ida&quot;,
+            &quot;last_name&quot;: &quot;Sanford&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00aa77?text=ullam&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;first_name&quot;: &quot;Rey&quot;,
+            &quot;last_name&quot;: &quot;King&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/001122?text=consequatur&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 22,
+            &quot;first_name&quot;: &quot;Idella&quot;,
+            &quot;last_name&quot;: &quot;Willms&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00dd11?text=et&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 24,
+            &quot;first_name&quot;: &quot;Guillermo&quot;,
+            &quot;last_name&quot;: &quot;Von&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/005544?text=incidunt&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 28,
+            &quot;first_name&quot;: &quot;Angelica&quot;,
+            &quot;last_name&quot;: &quot;Durgan&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0011ee?text=quis&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 33,
+            &quot;first_name&quot;: &quot;Brown&quot;,
+            &quot;last_name&quot;: &quot;Ratke&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/006622?text=asperiores&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 47,
+            &quot;first_name&quot;: &quot;Marie&quot;,
+            &quot;last_name&quot;: &quot;Boyer&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0000bb?text=est&quot;,
+            &quot;team_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;first_name&quot;: &quot;Imani&quot;,
+            &quot;last_name&quot;: &quot;Zieme&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ddcc?text=enim&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;first_name&quot;: &quot;Wellington&quot;,
+            &quot;last_name&quot;: &quot;Schmeler&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0011aa?text=sapiente&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;first_name&quot;: &quot;Emil&quot;,
+            &quot;last_name&quot;: &quot;Prohaska&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00cc00?text=ea&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 27,
+            &quot;first_name&quot;: &quot;Rozella&quot;,
+            &quot;last_name&quot;: &quot;Streich&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ee44?text=sit&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 32,
+            &quot;first_name&quot;: &quot;Francis&quot;,
+            &quot;last_name&quot;: &quot;Prosacco&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0022bb?text=recusandae&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 40,
+            &quot;first_name&quot;: &quot;Kirk&quot;,
+            &quot;last_name&quot;: &quot;Crona&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00eeee?text=qui&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 44,
+            &quot;first_name&quot;: &quot;Emma&quot;,
+            &quot;last_name&quot;: &quot;Bins&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0044ff?text=ea&quot;,
+            &quot;team_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;first_name&quot;: &quot;Jett&quot;,
+            &quot;last_name&quot;: &quot;Morar&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0055cc?text=dignissimos&quot;,
+            &quot;team_id&quot;: 5,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 18,
+            &quot;first_name&quot;: &quot;Tremaine&quot;,
+            &quot;last_name&quot;: &quot;Green&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0088cc?text=aliquid&quot;,
+            &quot;team_id&quot;: 5,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 29,
+            &quot;first_name&quot;: &quot;Brain&quot;,
+            &quot;last_name&quot;: &quot;Wisoky&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/001122?text=soluta&quot;,
+            &quot;team_id&quot;: 5,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 35,
+            &quot;first_name&quot;: &quot;Daren&quot;,
+            &quot;last_name&quot;: &quot;Wiegand&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/009966?text=labore&quot;,
+            &quot;team_id&quot;: 5,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;first_name&quot;: &quot;Lamar&quot;,
+            &quot;last_name&quot;: &quot;Hermann&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/000044?text=quibusdam&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;first_name&quot;: &quot;Tracey&quot;,
+            &quot;last_name&quot;: &quot;Reilly&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/006688?text=quod&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;first_name&quot;: &quot;Noah&quot;,
+            &quot;last_name&quot;: &quot;Dicki&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0077ff?text=consequatur&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 17,
+            &quot;first_name&quot;: &quot;Vanessa&quot;,
+            &quot;last_name&quot;: &quot;Russel&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/007722?text=odio&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 19,
+            &quot;first_name&quot;: &quot;Jakayla&quot;,
+            &quot;last_name&quot;: &quot;Collins&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/006644?text=et&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 21,
+            &quot;first_name&quot;: &quot;Reanna&quot;,
+            &quot;last_name&quot;: &quot;Bailey&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/009966?text=doloremque&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 25,
+            &quot;first_name&quot;: &quot;Constance&quot;,
+            &quot;last_name&quot;: &quot;Koss&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ccbb?text=dolorem&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 26,
+            &quot;first_name&quot;: &quot;Susanna&quot;,
+            &quot;last_name&quot;: &quot;Rohan&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0066dd?text=eveniet&quot;,
+            &quot;team_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;first_name&quot;: &quot;Delta&quot;,
+            &quot;last_name&quot;: &quot;Rogahn&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/009999?text=quos&quot;,
+            &quot;team_id&quot;: 7,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;
+        },
+        {
+            &quot;id&quot;: 31,
+            &quot;first_name&quot;: &quot;Estelle&quot;,
+            &quot;last_name&quot;: &quot;Grady&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/003333?text=ratione&quot;,
+            &quot;team_id&quot;: 7,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 37,
+            &quot;first_name&quot;: &quot;Karli&quot;,
+            &quot;last_name&quot;: &quot;Crist&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0066ff?text=soluta&quot;,
+            &quot;team_id&quot;: 7,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;first_name&quot;: &quot;Lacey&quot;,
+            &quot;last_name&quot;: &quot;Williamson&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00dd11?text=officia&quot;,
+            &quot;team_id&quot;: 8,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:22&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:22&quot;
+        },
+        {
+            &quot;id&quot;: 30,
+            &quot;first_name&quot;: &quot;Danyka&quot;,
+            &quot;last_name&quot;: &quot;Padberg&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00aaee?text=excepturi&quot;,
+            &quot;team_id&quot;: 8,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 36,
+            &quot;first_name&quot;: &quot;Jovany&quot;,
+            &quot;last_name&quot;: &quot;Botsford&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/003344?text=sed&quot;,
+            &quot;team_id&quot;: 8,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 46,
+            &quot;first_name&quot;: &quot;Edmond&quot;,
+            &quot;last_name&quot;: &quot;Legros&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00bb44?text=sapiente&quot;,
+            &quot;team_id&quot;: 8,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 48,
+            &quot;first_name&quot;: &quot;Shania&quot;,
+            &quot;last_name&quot;: &quot;Tromp&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00aacc?text=aut&quot;,
+            &quot;team_id&quot;: 8,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:25&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:25&quot;
+        },
+        {
+            &quot;id&quot;: 49,
+            &quot;first_name&quot;: &quot;Mertie&quot;,
+            &quot;last_name&quot;: &quot;Kuhic&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ffcc?text=id&quot;,
+            &quot;team_id&quot;: 8,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:25&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:25&quot;
+        },
+        {
+            &quot;id&quot;: 38,
+            &quot;first_name&quot;: &quot;Cheyenne&quot;,
+            &quot;last_name&quot;: &quot;Batz&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/001188?text=minima&quot;,
+            &quot;team_id&quot;: 9,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 39,
+            &quot;first_name&quot;: &quot;Magdalena&quot;,
+            &quot;last_name&quot;: &quot;Lakin&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/0022ee?text=itaque&quot;,
+            &quot;team_id&quot;: 10,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 42,
+            &quot;first_name&quot;: &quot;Estel&quot;,
+            &quot;last_name&quot;: &quot;Daniel&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00bb77?text=fugiat&quot;,
+            &quot;team_id&quot;: 10,
+            &quot;created_at&quot;: &quot;2021-09-01 17:15:24&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:15:24&quot;
+        },
+        {
+            &quot;id&quot;: 51,
+            &quot;first_name&quot;: &quot;Deepak&quot;,
+            &quot;last_name&quot;: &quot;kumars&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ccbb?text=deepak&quot;,
+            &quot;team_id&quot;: 11,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 52,
+            &quot;first_name&quot;: &quot;Aftab&quot;,
+            &quot;last_name&quot;: &quot;Alam&quot;,
+            &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/00ccbb?text=anfatb&quot;,
+            &quot;team_id&quot;: 12,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        }
+    ],
+    &quot;message&quot;: &quot;Players List Found&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-players" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-players"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-players"></code></pre>
+</span>
+<span id="execution-error-GETapi-players" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-players"></code></pre>
+</span>
+<form id="form-GETapi-players" data-method="GET"
+      data-path="api/players"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-players', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-players"
+                    onclick="tryItOut('GETapi-players');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-players"
+                    onclick="cancelTryOut('GETapi-players');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-players" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/players</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-player--id-">PURPOSE : Player details with team
+METHOD: GET
+REQ PARAMS : NONE
+URL : /api/player/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-player--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/player/19" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/player/19"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-player--id-">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 56
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;data&quot;: {
+        &quot;id&quot;: 19,
+        &quot;first_name&quot;: &quot;Jakayla&quot;,
+        &quot;last_name&quot;: &quot;Collins&quot;,
+        &quot;player_image_url&quot;: &quot;https://via.placeholder.com/100x100.png/006644?text=et&quot;,
+        &quot;team_id&quot;: 6,
+        &quot;created_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+        &quot;updated_at&quot;: &quot;2021-09-01 17:15:23&quot;,
+        &quot;team&quot;: {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Paula Larson I&quot;,
+            &quot;logo_url&quot;: &quot;https://via.placeholder.com/100x100.png/00bb00?text=fuga&quot;,
+            &quot;created_at&quot;: &quot;2021-09-01 17:11:11&quot;,
+            &quot;updated_at&quot;: &quot;2021-09-01 17:11:11&quot;
+        }
+    },
+    &quot;message&quot;: &quot;&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-player--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-player--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-player--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-player--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-player--id-"></code></pre>
+</span>
+<form id="form-GETapi-player--id-" data-method="GET"
+      data-path="api/player/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-player--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-player--id-"
+                    onclick="tryItOut('GETapi-player--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-player--id-"
+                    onclick="cancelTryOut('GETapi-player--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-player--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/player/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-player--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the player.</p>            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-add-team">PURPOSE : Add Team
+METHOD: POST
+HEADERS: S-TOKEN
+REQ PARAMS: team_name, team_logo
+URL : /api/add/team</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-add-team">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/add/team" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"team_name\": \"doloribus\",
+    \"team_logo\": \"temporibus\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/add/team"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "team_name": "doloribus",
+    "team_logo": "temporibus"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-add-team">
+</span>
+<span id="execution-results-POSTapi-add-team" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-add-team"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-add-team"></code></pre>
+</span>
+<span id="execution-error-POSTapi-add-team" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-add-team"></code></pre>
+</span>
+<form id="form-POSTapi-add-team" data-method="POST"
+      data-path="api/add/team"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-add-team', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-add-team"
+                    onclick="tryItOut('POSTapi-add-team');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-add-team"
+                    onclick="cancelTryOut('POSTapi-add-team');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-add-team" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/add/team</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>team_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_name"
+               data-endpoint="POSTapi-add-team"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>team_logo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_logo"
+               data-endpoint="POSTapi-add-team"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-edit-team">PURPOSE : Update
+METHOD: POST
+HEADERS: S-TOKEN
+REQ PARAMS: id, team_name, team_logo
+URL : /api/edit/team</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-edit-team">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/edit/team" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"team_id\": \"velit\",
+    \"team_name\": \"et\",
+    \"team_logo\": \"dolor\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/edit/team"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "team_id": "velit",
+    "team_name": "et",
+    "team_logo": "dolor"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-edit-team">
+</span>
+<span id="execution-results-POSTapi-edit-team" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-edit-team"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-edit-team"></code></pre>
+</span>
+<span id="execution-error-POSTapi-edit-team" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-edit-team"></code></pre>
+</span>
+<form id="form-POSTapi-edit-team" data-method="POST"
+      data-path="api/edit/team"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-edit-team', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-edit-team"
+                    onclick="tryItOut('POSTapi-edit-team');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-edit-team"
+                    onclick="cancelTryOut('POSTapi-edit-team');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-edit-team" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/edit/team</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>team_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_id"
+               data-endpoint="POSTapi-edit-team"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>team_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_name"
+               data-endpoint="POSTapi-edit-team"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>team_logo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_logo"
+               data-endpoint="POSTapi-edit-team"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-GETapi-team-details--id-">PURPOSE : Get team details
+METHOD: GET
+HEADERS: S-TOKEN
+REQ PARAMS: None
+URL : /api/team-details/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-team-details--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/team-details/aut" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/team-details/aut"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-team-details--id-">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;data&quot;: null,
+    &quot;message&quot;: &quot;Invalid Api Key&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-team-details--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-team-details--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-team-details--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-team-details--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-team-details--id-"></code></pre>
+</span>
+<form id="form-GETapi-team-details--id-" data-method="GET"
+      data-path="api/team-details/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-team-details--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-team-details--id-"
+                    onclick="tryItOut('GETapi-team-details--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-team-details--id-"
+                    onclick="cancelTryOut('GETapi-team-details--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-team-details--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/team-details/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-team-details--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the team detail.</p>            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-delete-team">PURPOSE : Delete tean
+METHOD: POST
+HEADERS: S-TOKEN
+REQ PARAMS: team_id
+URL : /api/delete/team</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-delete-team">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/delete/team" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"team_id\": \"repellendus\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delete/team"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "team_id": "repellendus"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-delete-team">
+</span>
+<span id="execution-results-POSTapi-delete-team" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-delete-team"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-delete-team"></code></pre>
+</span>
+<span id="execution-error-POSTapi-delete-team" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-delete-team"></code></pre>
+</span>
+<form id="form-POSTapi-delete-team" data-method="POST"
+      data-path="api/delete/team"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-delete-team', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-delete-team"
+                    onclick="tryItOut('POSTapi-delete-team');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-delete-team"
+                    onclick="cancelTryOut('POSTapi-delete-team');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-delete-team" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/delete/team</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>team_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_id"
+               data-endpoint="POSTapi-delete-team"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-add-player">PURPOSE : Add Player
+METHOD: POST
+HEADERS: S-TOKEN
+REQ PARAMS: first_name, last_name, player_image_url, team_id
+URL : /api/add/player</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-add-player">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/add/player" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"first_name\": \"impedit\",
+    \"last_name\": \"impedit\",
+    \"player_image_url\": \"tenetur\",
+    \"team_id\": \"molestiae\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/add/player"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "impedit",
+    "last_name": "impedit",
+    "player_image_url": "tenetur",
+    "team_id": "molestiae"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-add-player">
+</span>
+<span id="execution-results-POSTapi-add-player" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-add-player"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-add-player"></code></pre>
+</span>
+<span id="execution-error-POSTapi-add-player" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-add-player"></code></pre>
+</span>
+<form id="form-POSTapi-add-player" data-method="POST"
+      data-path="api/add/player"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-add-player', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-add-player"
+                    onclick="tryItOut('POSTapi-add-player');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-add-player"
+                    onclick="cancelTryOut('POSTapi-add-player');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-add-player" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/add/player</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="POSTapi-add-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="POSTapi-add-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>player_image_url</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="player_image_url"
+               data-endpoint="POSTapi-add-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>team_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_id"
+               data-endpoint="POSTapi-add-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-edit-player">PURPOSE : Update Player
+METHOD: POST
+REQ PARAMS: player_id, first_name, last_name, player_image_url, team_id
+URL : /api/edit/player</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-edit-player">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/edit/player" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"player_id\": \"eos\",
+    \"first_name\": \"vel\",
+    \"last_name\": \"odio\",
+    \"player_image_url\": \"sequi\",
+    \"team_id\": \"sapiente\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/edit/player"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "player_id": "eos",
+    "first_name": "vel",
+    "last_name": "odio",
+    "player_image_url": "sequi",
+    "team_id": "sapiente"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-edit-player">
+</span>
+<span id="execution-results-POSTapi-edit-player" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-edit-player"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-edit-player"></code></pre>
+</span>
+<span id="execution-error-POSTapi-edit-player" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-edit-player"></code></pre>
+</span>
+<form id="form-POSTapi-edit-player" data-method="POST"
+      data-path="api/edit/player"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-edit-player', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-edit-player"
+                    onclick="tryItOut('POSTapi-edit-player');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-edit-player"
+                    onclick="cancelTryOut('POSTapi-edit-player');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-edit-player" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/edit/player</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>player_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="player_id"
+               data-endpoint="POSTapi-edit-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="POSTapi-edit-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="POSTapi-edit-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>player_image_url</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="player_image_url"
+               data-endpoint="POSTapi-edit-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>team_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="team_id"
+               data-endpoint="POSTapi-edit-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-GETapi-player-details--id-">PURPOSE : Player details
+METHOD: GET
+HEADERS: S-TOKEN
+REQ PARAMS : none
+URL : /api/player-details/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-player-details--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/player-details/libero" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/player-details/libero"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-player-details--id-">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 54
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;data&quot;: null,
+    &quot;message&quot;: &quot;Invalid Api Key&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-player-details--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-player-details--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-player-details--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-player-details--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-player-details--id-"></code></pre>
+</span>
+<form id="form-GETapi-player-details--id-" data-method="GET"
+      data-path="api/player-details/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-player-details--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-player-details--id-"
+                    onclick="tryItOut('GETapi-player-details--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-player-details--id-"
+                    onclick="cancelTryOut('GETapi-player-details--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-player-details--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/player-details/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-player-details--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the player detail.</p>            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-delete-player">PURPOSE : Delete Player
+METHOD: POST
+HEADERS: S-TOKEN
+REQ PARAMS: player_id
+URL : /api/delete/player</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-delete-player">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/delete/player" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"player_id\": \"enim\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delete/player"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "player_id": "enim"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-delete-player">
+</span>
+<span id="execution-results-POSTapi-delete-player" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-delete-player"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-delete-player"></code></pre>
+</span>
+<span id="execution-error-POSTapi-delete-player" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-delete-player"></code></pre>
+</span>
+<form id="form-POSTapi-delete-player" data-method="POST"
+      data-path="api/delete/player"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-delete-player', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-delete-player"
+                    onclick="tryItOut('POSTapi-delete-player');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-delete-player"
+                    onclick="cancelTryOut('POSTapi-delete-player');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-delete-player" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/delete/player</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>player_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="player_id"
+               data-endpoint="POSTapi-delete-player"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>

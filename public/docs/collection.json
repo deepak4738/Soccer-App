@@ -1,0 +1,594 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost"
+        }
+    ],
+    "info": {
+        "name": "Soccer App",
+        "_postman_id": "62f37620-e717-476d-8fc8-7126520553a9",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "PURPOSE : Get All teams\nMETHOD: GET\nREQ PARAMS: None\nURL : \/api\/teams",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/teams",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/teams"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 201,
+                            "body": "{\"status\":true,\"data\":[{\"id\":1,\"name\":\"Marina Botsford\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0099bb?text=ab\",\"created_at\":\"2021-09-01 17:11:10\",\"updated_at\":\"2021-09-01 17:11:10\"},{\"id\":2,\"name\":\"Beryl Langosh\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/002244?text=vel\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"},{\"id\":3,\"name\":\"Bernard Bashirians\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00eebb?text=culpa\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"},{\"id\":4,\"name\":\"Miss Imelda Mosciski II\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/008844?text=vitae\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"},{\"id\":5,\"name\":\"Mr. Daryl Adams\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/009999?text=iusto\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"},{\"id\":6,\"name\":\"Paula Larson I\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00bb00?text=fuga\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"},{\"id\":7,\"name\":\"Alia Mraz\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/005500?text=quos\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"},{\"id\":8,\"name\":\"Jordyn Bahringer\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0022cc?text=vero\",\"created_at\":\"2021-09-01 17:11:12\",\"updated_at\":\"2021-09-01 17:11:12\"},{\"id\":9,\"name\":\"Mr. Max Kris\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ddee?text=excepturi\",\"created_at\":\"2021-09-01 17:11:12\",\"updated_at\":\"2021-09-01 17:11:12\"},{\"id\":10,\"name\":\"Marlene Bruen\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/007755?text=et\",\"created_at\":\"2021-09-01 17:11:12\",\"updated_at\":\"2021-09-01 17:11:12\"},{\"id\":11,\"name\":\"Deepak teams\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/007755?text=de\",\"created_at\":null,\"updated_at\":null},{\"id\":12,\"name\":\"Aftab Team\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/007755?text=al\",\"created_at\":null,\"updated_at\":null}],\"message\":\"Teams List Found\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PURPOSE: Get All player by teamId\nMETHOD: GET\nREQ PARAMS: NONE\nURL: \/api\/team\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/team\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/team\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "The ID of the team."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\"status\":false,\"data\":null,\"message\":\"No Team Found\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PURPOSE : Get All players\nMETHOD: GET\nREQ PARAMS: None\nURL : \/api\/players",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/players",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/players"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 201,
+                            "body": "{\"status\":true,\"data\":[{\"id\":12,\"first_name\":\"Rudy\",\"last_name\":\"Grahams\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/008800?text=omnis\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":13,\"first_name\":\"Theodora\",\"last_name\":\"Kunze\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/004488?text=eius\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":20,\"first_name\":\"Merle\",\"last_name\":\"Labadie\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/009977?text=debitis\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":23,\"first_name\":\"Eliza\",\"last_name\":\"Wunsch\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0055ff?text=repellat\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":34,\"first_name\":\"Antonietta\",\"last_name\":\"Luettgen\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0088dd?text=accusantium\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":41,\"first_name\":\"Lindsey\",\"last_name\":\"Torp\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0077cc?text=reprehenderit\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":43,\"first_name\":\"Ora\",\"last_name\":\"Farrell\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00aabb?text=cum\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":45,\"first_name\":\"Waldo\",\"last_name\":\"Mann\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/002211?text=et\",\"team_id\":1,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":3,\"first_name\":\"Trey\",\"last_name\":\"O'Reilly\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0066ff?text=voluptatem\",\"team_id\":2,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":6,\"first_name\":\"Barton\",\"last_name\":\"Medhurst\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ff55?text=natus\",\"team_id\":2,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":15,\"first_name\":\"Edmond\",\"last_name\":\"Mayer\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/000033?text=dolor\",\"team_id\":2,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":50,\"first_name\":\"Triston\",\"last_name\":\"Zemlak\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/006644?text=fuga\",\"team_id\":2,\"created_at\":\"2021-09-01 17:15:25\",\"updated_at\":\"2021-09-01 17:15:25\"},{\"id\":5,\"first_name\":\"Ida\",\"last_name\":\"Sanford\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00aa77?text=ullam\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":8,\"first_name\":\"Rey\",\"last_name\":\"King\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/001122?text=consequatur\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":22,\"first_name\":\"Idella\",\"last_name\":\"Willms\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00dd11?text=et\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":24,\"first_name\":\"Guillermo\",\"last_name\":\"Von\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/005544?text=incidunt\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":28,\"first_name\":\"Angelica\",\"last_name\":\"Durgan\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0011ee?text=quis\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":33,\"first_name\":\"Brown\",\"last_name\":\"Ratke\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/006622?text=asperiores\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":47,\"first_name\":\"Marie\",\"last_name\":\"Boyer\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0000bb?text=est\",\"team_id\":3,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":1,\"first_name\":\"Imani\",\"last_name\":\"Zieme\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ddcc?text=enim\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":4,\"first_name\":\"Wellington\",\"last_name\":\"Schmeler\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0011aa?text=sapiente\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":16,\"first_name\":\"Emil\",\"last_name\":\"Prohaska\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00cc00?text=ea\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":27,\"first_name\":\"Rozella\",\"last_name\":\"Streich\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ee44?text=sit\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":32,\"first_name\":\"Francis\",\"last_name\":\"Prosacco\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0022bb?text=recusandae\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":40,\"first_name\":\"Kirk\",\"last_name\":\"Crona\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00eeee?text=qui\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":44,\"first_name\":\"Emma\",\"last_name\":\"Bins\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0044ff?text=ea\",\"team_id\":4,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":14,\"first_name\":\"Jett\",\"last_name\":\"Morar\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0055cc?text=dignissimos\",\"team_id\":5,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":18,\"first_name\":\"Tremaine\",\"last_name\":\"Green\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0088cc?text=aliquid\",\"team_id\":5,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":29,\"first_name\":\"Brain\",\"last_name\":\"Wisoky\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/001122?text=soluta\",\"team_id\":5,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":35,\"first_name\":\"Daren\",\"last_name\":\"Wiegand\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/009966?text=labore\",\"team_id\":5,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":2,\"first_name\":\"Lamar\",\"last_name\":\"Hermann\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/000044?text=quibusdam\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":7,\"first_name\":\"Tracey\",\"last_name\":\"Reilly\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/006688?text=quod\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":9,\"first_name\":\"Noah\",\"last_name\":\"Dicki\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0077ff?text=consequatur\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":17,\"first_name\":\"Vanessa\",\"last_name\":\"Russel\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/007722?text=odio\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":19,\"first_name\":\"Jakayla\",\"last_name\":\"Collins\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/006644?text=et\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":21,\"first_name\":\"Reanna\",\"last_name\":\"Bailey\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/009966?text=doloremque\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":25,\"first_name\":\"Constance\",\"last_name\":\"Koss\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ccbb?text=dolorem\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":26,\"first_name\":\"Susanna\",\"last_name\":\"Rohan\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0066dd?text=eveniet\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":11,\"first_name\":\"Delta\",\"last_name\":\"Rogahn\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/009999?text=quos\",\"team_id\":7,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\"},{\"id\":31,\"first_name\":\"Estelle\",\"last_name\":\"Grady\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/003333?text=ratione\",\"team_id\":7,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":37,\"first_name\":\"Karli\",\"last_name\":\"Crist\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0066ff?text=soluta\",\"team_id\":7,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":10,\"first_name\":\"Lacey\",\"last_name\":\"Williamson\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00dd11?text=officia\",\"team_id\":8,\"created_at\":\"2021-09-01 17:15:22\",\"updated_at\":\"2021-09-01 17:15:22\"},{\"id\":30,\"first_name\":\"Danyka\",\"last_name\":\"Padberg\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00aaee?text=excepturi\",\"team_id\":8,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":36,\"first_name\":\"Jovany\",\"last_name\":\"Botsford\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/003344?text=sed\",\"team_id\":8,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":46,\"first_name\":\"Edmond\",\"last_name\":\"Legros\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00bb44?text=sapiente\",\"team_id\":8,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":48,\"first_name\":\"Shania\",\"last_name\":\"Tromp\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00aacc?text=aut\",\"team_id\":8,\"created_at\":\"2021-09-01 17:15:25\",\"updated_at\":\"2021-09-01 17:15:25\"},{\"id\":49,\"first_name\":\"Mertie\",\"last_name\":\"Kuhic\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ffcc?text=id\",\"team_id\":8,\"created_at\":\"2021-09-01 17:15:25\",\"updated_at\":\"2021-09-01 17:15:25\"},{\"id\":38,\"first_name\":\"Cheyenne\",\"last_name\":\"Batz\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/001188?text=minima\",\"team_id\":9,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":39,\"first_name\":\"Magdalena\",\"last_name\":\"Lakin\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/0022ee?text=itaque\",\"team_id\":10,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":42,\"first_name\":\"Estel\",\"last_name\":\"Daniel\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00bb77?text=fugiat\",\"team_id\":10,\"created_at\":\"2021-09-01 17:15:24\",\"updated_at\":\"2021-09-01 17:15:24\"},{\"id\":51,\"first_name\":\"Deepak\",\"last_name\":\"kumars\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ccbb?text=deepak\",\"team_id\":11,\"created_at\":null,\"updated_at\":null},{\"id\":52,\"first_name\":\"Aftab\",\"last_name\":\"Alam\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00ccbb?text=anfatb\",\"team_id\":12,\"created_at\":null,\"updated_at\":null}],\"message\":\"Players List Found\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PURPOSE : Player details with team\nMETHOD: GET\nREQ PARAMS : NONE\nURL : \/api\/player\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/player\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/player\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "19",
+                                    "description": "The ID of the player."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 201,
+                            "body": "{\"status\":true,\"data\":{\"id\":19,\"first_name\":\"Jakayla\",\"last_name\":\"Collins\",\"player_image_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/006644?text=et\",\"team_id\":6,\"created_at\":\"2021-09-01 17:15:23\",\"updated_at\":\"2021-09-01 17:15:23\",\"team\":{\"id\":6,\"name\":\"Paula Larson I\",\"logo_url\":\"https:\\\/\\\/via.placeholder.com\\\/100x100.png\\\/00bb00?text=fuga\",\"created_at\":\"2021-09-01 17:11:11\",\"updated_at\":\"2021-09-01 17:11:11\"}},\"message\":\"\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PURPOSE : Add Team\nMETHOD: POST\nHEADERS: S-TOKEN\nREQ PARAMS: team_name, team_logo\nURL : \/api\/add\/team",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/add\/team",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/add\/team"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"team_name\":\"doloribus\",\"team_logo\":\"temporibus\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PURPOSE : Update\nMETHOD: POST\nHEADERS: S-TOKEN\nREQ PARAMS: id, team_name, team_logo\nURL : \/api\/edit\/team",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/edit\/team",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/edit\/team"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"team_id\":\"velit\",\"team_name\":\"et\",\"team_logo\":\"dolor\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PURPOSE : Get team details\nMETHOD: GET\nHEADERS: S-TOKEN\nREQ PARAMS: None\nURL : \/api\/team-details\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/team-details\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/team-details\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "aut",
+                                    "description": "The ID of the team detail."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 201,
+                            "body": "{\"status\":false,\"data\":null,\"message\":\"Invalid Api Key\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PURPOSE : Delete tean\nMETHOD: POST\nHEADERS: S-TOKEN\nREQ PARAMS: team_id\nURL : \/api\/delete\/team",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/delete\/team",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/delete\/team"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"team_id\":\"repellendus\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PURPOSE : Add Player\nMETHOD: POST\nHEADERS: S-TOKEN\nREQ PARAMS: first_name, last_name, player_image_url, team_id\nURL : \/api\/add\/player",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/add\/player",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/add\/player"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"impedit\",\"last_name\":\"impedit\",\"player_image_url\":\"tenetur\",\"team_id\":\"molestiae\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PURPOSE : Update Player\nMETHOD: POST\nREQ PARAMS: player_id, first_name, last_name, player_image_url, team_id\nURL : \/api\/edit\/player",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/edit\/player",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/edit\/player"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"player_id\":\"eos\",\"first_name\":\"vel\",\"last_name\":\"odio\",\"player_image_url\":\"sequi\",\"team_id\":\"sapiente\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PURPOSE : Player details\nMETHOD: GET\nHEADERS: S-TOKEN\nREQ PARAMS : none\nURL : \/api\/player-details\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/player-details\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/player-details\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "libero",
+                                    "description": "The ID of the player detail."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 201,
+                            "body": "{\"status\":false,\"data\":null,\"message\":\"Invalid Api Key\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PURPOSE : Delete Player\nMETHOD: POST\nHEADERS: S-TOKEN\nREQ PARAMS: player_id\nURL : \/api\/delete\/player",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/delete\/player",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/delete\/player"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"player_id\":\"enim\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

@@ -23,20 +23,20 @@ class PlayerController extends BaseController
     }
 
     /**
-     * PURPOSE: Get All player by team_id
+     * PURPOSE: Get All player by teamId
      * METHOD: GET
-     * REQ PARAMS: team_id 
+     * REQ PARAMS: NONE 
      * URL: /api/team/{id}
     */
-    public function getPlayers($team_id)
+    public function getPlayers($teamId)
     {
-        if (empty($this->teamRepository->findById($team_id))){
+        if (empty($this->teamRepository->findById($teamId))){
             return $this->sendError('No Team Found', 404);
         }
 
         $data = [];
-        $data['teamDetails'] = $this->teamRepository->findById($team_id)->toArray();
-        $data['players'] = $this->playerRepository->getAll($team_id)->toArray();
+        $data['teamDetails'] = $this->teamRepository->findById($teamId)->toArray();
+        $data['players'] = $this->playerRepository->getAll($teamId)->toArray();
 
         return  $this->sendResponse(
                     $data, 
@@ -48,17 +48,17 @@ class PlayerController extends BaseController
     /**
      * PURPOSE : Player details with team
      * METHOD: GET
-     * REQ PARAMS : player_id 
+     * REQ PARAMS : NONE 
      * URL : /api/player/{id}
     */
-    public function getPlayer($player_id)
+    public function getPlayer($playerId)
     {    
-        if (empty($this->playerRepository->findById($player_id))){
+        if (empty($this->playerRepository->findById($playerId))){
             return $this->sendError('No Player Found', 404);
         }
 
         $data = [];
-        $data = $this->playerRepository->findById($player_id)->toArray();
+        $data = $this->playerRepository->findById($playerId)->toArray();
         
         return  $this->sendResponse(
                     $data, 
@@ -86,6 +86,7 @@ class PlayerController extends BaseController
     /**
      * PURPOSE : Add Player
      * METHOD: POST
+     * HEADERS: S-TOKEN
      * REQ PARAMS: first_name, last_name, player_image_url, team_id
      * URL : /api/add/player
     */
@@ -115,17 +116,18 @@ class PlayerController extends BaseController
     /**
      * PURPOSE : Player details 
      * METHOD: GET
+     * HEADERS: S-TOKEN
      * REQ PARAMS : none 
      * URL : /api/player-details/{id}
     */
-    public function playerDetail($player_id)
+    public function playerDetail($playerId)
     {
-        if (empty($this->playerRepository->findById($player_id))){
+        if (empty($this->playerRepository->findById($playerId))){
             return $this->sendError('No Player Found', 404);
         }
 
         $data = [];
-        $data = $this->playerRepository->findById($player_id)->toArray();
+        $data = $this->playerRepository->findById($playerId)->toArray();
         
         return  $this->sendResponse(
                     $data, 
@@ -137,6 +139,7 @@ class PlayerController extends BaseController
     /**
      * PURPOSE : Update Player
      * METHOD: POST
+     * HEADERS: S-TOKEN
      * REQ PARAMS: player_id, first_name, last_name, player_image_url, team_id
      * URL : /api/edit/player
     */
@@ -167,6 +170,7 @@ class PlayerController extends BaseController
      /**
      * PURPOSE : Delete Player
      * METHOD: POST
+     * HEADERS: S-TOKEN
      * REQ PARAMS: player_id
      * URL : /api/delete/player
     */
