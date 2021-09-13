@@ -12,6 +12,8 @@ class PlayerRepository implements SoccerRepository
     /**
      * Get all records as a result-set in an array
      *
+     * @param interger $id
+     * @param string $orderBy
      * @return array
      */
     public function getAll( $id = null, $orderBy = 'first_name' )
@@ -29,6 +31,7 @@ class PlayerRepository implements SoccerRepository
     /**
      * Get record based on ID
      *
+     * @param interger $id
      * @return array
      */
     public function findById($id)
@@ -39,6 +42,8 @@ class PlayerRepository implements SoccerRepository
     /**
      * Create or Update record in data-set in datatable
      *
+     * @param interger $id
+     * @param array $collection
      * @return boolean
      */
     public function createOrUpdate( $id = null, $collection = [] )
@@ -65,6 +70,7 @@ class PlayerRepository implements SoccerRepository
     /**
      * Delete record from data-set in data-table
      *
+     * @param interger $id
      * @return boolean
      */
     public function delete($id)
